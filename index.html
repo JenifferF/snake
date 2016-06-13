@@ -129,12 +129,6 @@
     }
 </style>
 <body>
-<!--     <div id="CTRL" >定时<input type="text" id="Fen" placeholder="分钟数" class="kk" >分钟
-    <div id="BTN" ><input type="button" value="计时开始" id="Start" class="kk"></div>
-    <span id="Player"></span></div>
-    <div id="PINGMU" ><span id="XS"></span></div>
- -->
-
     <div class="left_sum"></div>
     	<ul class="left"> 
             <ul class="zhe">
@@ -308,92 +302,92 @@ $('li.caozuo').bind('click',function(){
             Fen=this.value;
         }
     );
-    var miao=60;
-    $("#Start").click(
-        function()
-        {
-            if($("input[type=text]").val()=="")
-            {
-                alert("请输入时间")
-            }
-            else if($("input[type=text]").val()>60)
-            {
-                alert("可用范围1~60分钟")
-            }
-            else
-            {
-                if(this.value=="计时开始")
-                {
-                    $("#Fen").get(0).disabled=true;
-                    this.value="取消计时";
-                    timer=setInterval(
-                    function()
-                    {
-                        if(Fen==0&&miao==1)//分钟数=0的时候
-                        {
-                            $("#Player").get(0).innerHTML="<audio src='n.mp3' autoplay loop='loop'></audio>";
-                            $("#Start").val("停止");
-                            clearInterval(timer);
-                        }
-                        if(Fen>=0&&Fen<=10)//分钟数0~10
-                        {
-                            miao--;
-                            if(miao==0)//秒数等于0的时候
-                            {
-                                miao=60;
-                                $("#XS").get(0).innerHTML="0"+Fen+":"+"00";
-                            }
-                            if(miao>0&&miao<10)//秒数0~10的时候
-                            {
-                                miao="0"+miao;
-                                $("#XS").get(0).innerHTML="0"+Fen+":"+miao;
-                            }
-                            if(miao>=10&&miao!=60)//秒数大于等于10的时候
-                            {
-                                if(miao==59)
-                                {
-                                    Fen--
-                                }
-                                $("#XS").get(0).innerHTML="0"+Fen+":"+miao;
-                            }
-                        }
-                        if(Fen>10)//分钟数大于10的时候
-                        {
-                            miao--;
-                            if(miao==0)//秒数等于0的时候
-                            {
-                                miao=60;
-                                $("#XS").get(0).innerHTML=Fen+":"+"00";
-                            }
-                            if(miao>0&&miao<10)//秒数0~10的时候
-                            {
-                                miao="0"+miao;
-                                $("#XS").get(0).innerHTML=Fen+":"+miao;
-                            }
-                            if(miao>=10&&miao!=60)//秒数大于等于10的时候
-                            {
-                                if(miao==59)
-                                {
-                                    Fen--
-                                }
-                                $("#XS").get(0).innerHTML=Fen+":"+miao;
-                            }
-                        }
-                    },
-                    1000
-                    )
-                }
-                else
-                {
-                    miao=60;
-                    $("#Fen").get(0).disabled=false;
-                    this.value="计时开始";
-                    $("audio").replaceWith("");
-                    $("#XS").get(0).innerHTML="00:00"
-                    $("input[type=text]").focus().val("");
-                    clearInterval(timer);
-                }
-            }   
+    // var miao=60;
+    // $("#Start").click(
+    //     function()
+    //     {
+    //         if($("input[type=text]").val()=="")
+    //         {
+    //             alert("请输入时间")
+    //         }
+    //         else if($("input[type=text]").val()>60)
+    //         {
+    //             alert("可用范围1~60分钟")
+    //         }
+    //         else
+    //         {
+    //             if(this.value=="计时开始")
+    //             {
+    //                 $("#Fen").get(0).disabled=true;
+    //                 this.value="取消计时";
+    //                 timer=setInterval(
+    //                 function()
+    //                 {
+    //                     if(Fen==0&&miao==1)//分钟数=0的时候
+    //                     {
+    //                         $("#Player").get(0).innerHTML="<audio src='n.mp3' autoplay loop='loop'></audio>";
+    //                         $("#Start").val("停止");
+    //                         clearInterval(timer);
+    //                     }
+    //                     if(Fen>=0&&Fen<=10)//分钟数0~10
+    //                     {
+    //                         miao--;
+    //                         if(miao==0)//秒数等于0的时候
+    //                         {
+    //                             miao=60;
+    //                             $("#XS").get(0).innerHTML="0"+Fen+":"+"00";
+    //                         }
+    //                         if(miao>0&&miao<10)//秒数0~10的时候
+    //                         {
+    //                             miao="0"+miao;
+    //                             $("#XS").get(0).innerHTML="0"+Fen+":"+miao;
+    //                         }
+    //                         if(miao>=10&&miao!=60)//秒数大于等于10的时候
+    //                         {
+    //                             if(miao==59)
+    //                             {
+    //                                 Fen--
+    //                             }
+    //                             $("#XS").get(0).innerHTML="0"+Fen+":"+miao;
+    //                         }
+    //                     }
+    //                     if(Fen>10)//分钟数大于10的时候
+    //                     {
+    //                         miao--;
+    //                         if(miao==0)//秒数等于0的时候
+    //                         {
+    //                             miao=60;
+    //                             $("#XS").get(0).innerHTML=Fen+":"+"00";
+    //                         }
+    //                         if(miao>0&&miao<10)//秒数0~10的时候
+    //                         {
+    //                             miao="0"+miao;
+    //                             $("#XS").get(0).innerHTML=Fen+":"+miao;
+    //                         }
+    //                         if(miao>=10&&miao!=60)//秒数大于等于10的时候
+    //                         {
+    //                             if(miao==59)
+    //                             {
+    //                                 Fen--
+    //                             }
+    //                             $("#XS").get(0).innerHTML=Fen+":"+miao;
+    //                         }
+    //                     }
+    //                 },
+    //                 1000
+    //                 )
+    //             }
+    //             else
+    //             {
+    //                 miao=60;
+    //                 $("#Fen").get(0).disabled=false;
+    //                 this.value="计时开始";
+    //                 $("audio").replaceWith("");
+    //                 $("#XS").get(0).innerHTML="00:00"
+    //                 $("input[type=text]").focus().val("");
+    //                 clearInterval(timer);
+    //             }
+    //         }   
         }
 );
     $("input[type=text]").focus();
