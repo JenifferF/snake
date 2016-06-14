@@ -39,7 +39,7 @@ $('.row').bind('keyup',function(e){
     		$('#'+v.x+'-'+v.y).addClass('she')
         })
     }
-    fangshe()
+     fangshe()
 
 ///放食物
 var fangshiwu=function(){
@@ -88,7 +88,7 @@ move();
 $(document).bind('keydown',function(e){
     	if(e.keyCode<37||e.keyCode>40){
     		return;
-    	}if(Math.abs(e.keyCode-fsangxiang)==2){
+    	}if(Math.abs(e.keyCode-fangxiang)==2){
     		return;
     	}else{
     		fangxiang=e.keyCode;
