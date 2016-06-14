@@ -84,7 +84,7 @@ var move=function(){
     
     }
    
-
+move();
 $(document).bind('keydown',function(e){
     	if(e.keyCode<37||e.keyCode>40){
     		return;
